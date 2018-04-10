@@ -48,6 +48,13 @@ urls and individual requests.
 This is still not tested thoroughly and there might be some gotchas, but the
 basic functionality is there.
 
+## Install
+
+```bash
+pipenv install -e git+https://github.com/shoeffner/requests-url-cache#egg=requests-url-cache
+# or
+pip install -e git+https://github.com/shoeffner/requests-url-cache#egg=requests-url-cache
+```
 
 ## Usage
 
