@@ -1,6 +1,7 @@
 from datetime import timedelta, datetime
 import requests_cache
 
+__version__ = '0.9.0'
 
 class RequestRegistry(dict):
     """A dictionary to store cache times."""
