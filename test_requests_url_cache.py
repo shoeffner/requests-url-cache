@@ -202,3 +202,29 @@ class PerURLCacheSessionTest(unittest.TestCase):
         requests_cache.core.remove_expired_responses()
 
         assert len(requests.Session().cache.responses) == 1
+
+
+class ContextManagerTest(unittest.TestCase):
+    def test_as_context_manager(self):
+        url = 'https://httpbin.org/delay/2'
+        with requests_cache.enabled(session_factory=PerURLCacheSession, expire_after=10):
+            response = requests.get(url)
+            assert not response.from_cache
+
+            response = requests.get(url)
+            assert response.from_cache
+
+        start = time.time()
+        response = requests.get(url)
+        end = time.time()
+        assert not hasattr(response, 'from_cache')
+        assert end - start >= 1.5
+
+        with requests_cache.enabled(session_factory=PerURLCacheSession):
+            response = requests.get(url)
+            assert response.from_cache
+
+
+
+if __name__ == '__main__':
+    unittest.main()
