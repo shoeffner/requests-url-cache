@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-from requests_url_cache import __version__
+__version__ = '0.9.1'
 
 
 REPOSITORY = 'https://github.com/shoeffner/requests-url-cache'
