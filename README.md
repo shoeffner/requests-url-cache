@@ -1,6 +1,6 @@
 # requests-url-cache
 
-[![Build Status](https://semaphoreci.com/api/v1/shoeffner/requests-url-cache/branches/master/badge.svg)](https://semaphoreci.com/shoeffner/requests-url-cache)
+**The functionality of this project is now part of [requests-cache](https://github.com/reclosedev/requests-cache)!**
 
 ```python
 import time
